@@ -50,7 +50,7 @@ class App {
 
         // run controller, method and send params (if there's)
         call_user_func_array([$this->controller,$this->method], $this->params);
-
+  
 
     }
     

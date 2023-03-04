@@ -1,10 +1,14 @@
 <?php 
-
-    class About {
-        public function index($name = "andes", $job="Web Programmer") {
-            echo " 
-            Hello I am $name  and my job is $job
-            \n this is default controller About/index";
+require_once '../app/core/Controller.php';
+    class About extends Controller {
+        public function index($name="andes",$job="programmer") {
+        $data["name"] = $name;
+        $data["job"] = $job;
+        $data["title"] = "About";
+        $data["footer"] = "About";
+        $this->view('templates/header',$data);
+        $this->view('about/index',$data);
+        $this->view('templates/footer',$data);
         }
       
     }
