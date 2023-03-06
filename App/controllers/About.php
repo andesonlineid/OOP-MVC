@@ -1,5 +1,5 @@
 <?php 
-require_once '../app/core/Controller.php';
+
     class About extends Controller {
         public function index($name="andes",$job="programmer") {
         $data["name"] = $name;
