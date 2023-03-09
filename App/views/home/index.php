@@ -1,23 +1,11 @@
+<h1>Hello this is member of my family</h1>
+<ul>
+    <?php foreach($datas["myFiends"] as $friend)  :?>
+
+        <li>Name: <?= $friend["name"]; ?></li>
+        <li>Address: <?= $friend["address"]; ?></li>
+        <br>
 
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-
-
-
-  <div class="container-fluid">
-    <a class="navbar-brand" href="<?= BASEURL; ?>">MVC PHP</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="<?= BASEURL; ?>">Home</a>
-        <a class="nav-link" href="<?= BASEURL; ?>about">About</a>
-
-      </div>
-    </div>
-  
-   
-  </div>
-
-</nav>
+    <?php endforeach; ?>
+</ul>
