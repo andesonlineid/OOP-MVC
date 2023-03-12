@@ -4,11 +4,20 @@
 
 
 <div class=".container mt-3">
+
 <div class="row">
+    <div class="col-6">
+    <?php 
+    Flasher::flashMessage();
+    ?>
+ </div>
 
+    </div>
+
+</div>
+
+<div class="row">
 <!-- Button trigger modal -->
-
-
     <div class="col-6">
     <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#add">
     Launch demo modal

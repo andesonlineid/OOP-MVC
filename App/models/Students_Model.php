@@ -12,7 +12,6 @@ class Students_Model {
     }
 
 
-
     public function addDataStudent($data) {
       
         $name = htmlspecialchars($data["student_name"]);
