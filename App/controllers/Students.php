@@ -17,6 +17,13 @@ class Students extends Controller {
         $this->view('students/details',$data);
         $this->view('templates/footer',$data);
     }
+    public function addStudent() {
+      if($this->model('Students_Model')->addDataStudent($_POST) > 0) {
+            header('Location: ' . BASEURL . "/Students");
+            exit();
+      }
+   
+    }
 }
 
 ?>

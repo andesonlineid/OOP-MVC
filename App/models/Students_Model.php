@@ -10,6 +10,26 @@ class Students_Model {
      $this->db = new Database();
         
     }
+
+
+
+    public function addDataStudent($data) {
+      
+        $name = htmlspecialchars($data["student_name"]);
+        $nim = htmlspecialchars($data["student_nim"]);
+        
+        $query = "INSERT INTO students VALUES ('',:name,:nim)";
+        $this->db->query($query);
+        $this->db->bind('name',$name);
+        $this->db->bind('nim',$nim);
+        
+        // Execute
+        $this->db->execute();
+        return $this->db->rowCount();
+       
+    }
+
+    
     public function getAllStudents() {
         // query process
         $this->db->query("SELECT * FROM $this->table");
@@ -23,6 +43,8 @@ class Students_Model {
         $this->db->bind('id',$id);
         return $this->db->single();
     }
+
+
 
 }
 
