@@ -4,10 +4,6 @@
 
 class Home extends Controller {
 
-   
-
- 
-
     public function index($name="andes", $job="Web Programmer") {
         // Example data from url
         $data["name"] = $name;

@@ -2,33 +2,28 @@
 
 class Students_Model {
 
-    private $serverName = 'localhost';
-    private $username = "root";
-    private $password = null;
-
-    // database handler
-    private $dbh;
-    // statement
-    private $stmt;
-
+    private $table = 'students';
+    private $db;
     // constructor
     public function __construct()
     {
-        // using PDO (php data object)
-        // data source name / server identity
-        $dsn = "mysql:host=$this->serverName;dbname=phpmvc";
-        try {
-            $this->dbh = new PDO($dsn,$this->username,$this->password);
-        } catch(PDOException $e) {
-                die($e->getMessage());
-        }
+     $this->db = new Database();
         
     }
-    public function getStudentsData() {
-        $this->stmt = $this->dbh->prepare("SELECT * FROM students");
-        $this->stmt->execute();
-        return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
+    public function getAllStudents() {
+        // query process
+        $this->db->query("SELECT * FROM $this->table");
+        // get data 
+        return $this->db->resultSet();
     }
+
+    public function getStudentById($id) {
+        // stored data you want to bind
+        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE id=:id');
+        $this->db->bind('id',$id);
+        return $this->db->single();
+    }
+
 }
 
 ?>
