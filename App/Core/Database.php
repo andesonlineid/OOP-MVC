@@ -69,6 +69,7 @@ class Database {
         return $this->stmt->fetch(PDO::FETCH_ASSOC);
     }
 
+    //  to know if there is row affected in dabatase
     public function rowCount() {
         return $this->stmt->rowCount();
     }

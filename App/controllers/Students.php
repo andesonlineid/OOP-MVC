@@ -23,10 +23,18 @@ class Students extends Controller {
             header('Location: ' . BASEURL . "Students");
             exit();
       } else {
-        Flasher::setFlasher('fail','adding','danger');
-      
+        Flasher::setFlasher('fail','adding','danger');      
     }
-   
+}
+
+    public function delete($id) {
+      if($this->model('Students_Model')->deleteStudent($id) > 0) {
+            Flasher::setFlasher('success','delete','success');
+            header('Location: ' . BASEURL . '/Students');
+            exit();
+      } else {
+        Flasher::setFlasher('failr','delete','danger');
+      }
     }
 }
 
