@@ -1,5 +1,3 @@
-<!-- this controller class set all controller classes -->
-
 <?php 
 
 class Controller {
@@ -14,5 +12,3 @@ class Controller {
         return new $model;
     }
 }
-
-?>
