@@ -54,6 +54,16 @@ class Students_Model
         return $this->db->rowCount();
     }
 
+    public function searchStudent($data)
+    {
+        $username = $data['search-form'];
+        $query = "SELECT * FROM $this->table WHERE name LIKE :username";
+        $this->db->query($query);
+        $this->db->bind("username", "%$username%");
+        $this->db->execute();
+        return $this->db->resultSet();
+    }
+
 
     public function getAllStudents()
     {

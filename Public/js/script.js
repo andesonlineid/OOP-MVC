@@ -1,7 +1,7 @@
 $(document).ready(function () {
-
     // add button 
     $('.add-student').click(function () {
+
         $("#exampleModalLabel").html("Adding New Student");
         $(".modal-footer button[type='submit']").html("Save").attr('name', 'btn-add');
         $(".modal-body form").attr('action', 'http://localhost/phpmvc/public/students/addStudent');
@@ -35,5 +35,6 @@ $(document).ready(function () {
         });
 
     });
-
 });
+
+

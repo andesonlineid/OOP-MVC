@@ -1,11 +1,17 @@
-<h1>Hello this is member of my family</h1>
-<ul>
-    <?php foreach($datas["myFiends"] as $friend)  :?>
+<div class="container-fluid opening">
 
-        <li>Name: <?= $friend["name"]; ?></li>
-        <li>Address: <?= $friend["address"]; ?></li>
-        <br>
+    <div class="home-fade position-fixed">
+        <img src="<?= BASEURL ?>/img/meandmymother.jpg" alt="me and my mother" class="position-fixed" title="me and my mother">
+    </div>
 
 
-    <?php endforeach; ?>
-</ul>
+    <div class="message-container">
+        <div class="title">
+            <h1>Welcome to <?= $datas["name"] ?> </h1>
+            <h3>The best <?= $datas["job"] ?></h3>
+            <button type="submit" onclick="window.open('https:' + '/'+ '/' + 'www.youtube.com/channel/UCyJy6pH2SHSlZkgGUbksYqQ')" class="btn btn-danger p-3 fs-2 mt-3 fw-bold">click here</button>
+        </div>
+
+    </div>
+
+</div>

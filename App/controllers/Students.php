@@ -60,4 +60,13 @@ class Students extends Controller
       Flasher::setFlasher('failr', 'delete', 'danger');
     }
   }
+
+  public function search()
+  {
+    $data["title"] = "Search";
+    $data['students'] = $this->model('Students_Model')->searchStudent($_POST);
+    $this->view('templates/header', $data);
+    $this->view('students/index', $data);
+    $this->view('templates/footer', $data);
+  }
 }

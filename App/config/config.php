@@ -1,5 +1,6 @@
 <?php
 
+
 // Baseurl constanta
 define("BASEURL", "http://localhost/phpmvc/public/");
 // configuration
